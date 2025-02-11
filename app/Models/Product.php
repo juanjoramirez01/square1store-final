@@ -17,22 +17,27 @@ class Product extends Model
         'description',
         'price',
         'sale_price',
-        'stock',
         'images',
         'rating',
-        'review_count',
-        'sizes',
-        'colors',
+        'review_count'
     ];
 
     protected $casts = [
-        'images' => 'array',
-        'sizes' => 'array',
-        'colors' => 'array',
+        'other_attributes' => 'array'
     ];
 
     public function categories()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function setOtherAttributesAttribute($value)
+    {
+        $this->attributes['other_attributes'] = json_encode($value);
+    }
+
+    public function variants()
+    {
+        return $this->hasMany(ProductVariant::class, 'product_id', 'id');
     }
 }

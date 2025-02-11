@@ -10,12 +10,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-intl": "*",
         "laravel/framework": "^11.31",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.4",
+        "livewire/livewire": "^3.5",
         "livewire/volt": "^1.0",
-        "matusstafura/faker-commerce": "^0.1.0",
-        "ext-intl": "*"
+        "matusstafura/faker-commerce": "^0.1.0"
     },
     "require-dev": {
         "amirami/localizator": "^0.13.0@alpha",
