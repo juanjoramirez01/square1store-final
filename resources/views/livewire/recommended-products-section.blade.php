@@ -1,7 +1,7 @@
-<div class="wrapper space-y-10">
+<div class="wrapper space-y-10 flex flex-col items-center">
     <div class="space-y-2">
-        <h2 class="text-black font-black text-5xl text-center">
-            {{__('New arrivals')}}
+        <h2 class="text-black font-black text-5xl text-center font-roboto">
+            {{__('New Arrivals')}}
         </h2>
 
         <p class="text-pretty text-black text-center sm:max-w-lg mx-auto">
@@ -41,8 +41,10 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
-        @foreach($selectedCategory->products->take(4) as $product)
-            <x-product-card :product="$product"/>
+        @foreach($selectedCategory->products->take(8) as $product)
+            <x-product.product-card :product="$product"/>
         @endforeach
     </div>
+
+    <x-secondary-button>{{__("View More")}}</x-secondary-button>
 </div>

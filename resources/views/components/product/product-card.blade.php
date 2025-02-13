@@ -16,8 +16,8 @@
         </div>
 
         <div class="flex justify-start items-start flex-wrap gap-x-4 gap-y-2 mt-4">
-            @foreach($product->colors as $color)
-                <div class="size-6 rounded-full border border-transparent" style="background-color: {{ $color }}"></div>
+            @foreach($product->variants as $variant)
+                    <x-product.color-button style="background-color: {{ $variant->color }}"></x-product.color-button>
             @endforeach
         </div>
     </a>

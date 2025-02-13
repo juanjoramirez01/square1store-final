@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
 
         foreach ($categoryNames as $categoryName) {
             try {
-                $categories[] = \App\Models\Category::factory()->create([
+                $categories[] = Category::factory()->create([
                     'name' => $categoryName,
                     'slug' => Str::slug($categoryName),
                     'description' => fake()->paragraph,

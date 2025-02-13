@@ -40,7 +40,7 @@ class ShoppingCart extends Model
      */
     public function cartItems()
     {
-        return $this->hasMany(CartItem::class, 'cart_id', 'id');
+        return $this->hasMany(CartItem::class, 'shopping_cart_id', 'id');
     }
 }
 
